@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form Validator</title>
+</head>
+<body>
+    <!-- Container-->
+    <div class="container">
+        <!-- ID grabbed by JS meanwhile class is grabbed by CSS-->
+        <form id="id" class="id">
+            <!-- Header -->
+            <h2>Register with Us.</h2>
+
+            <div class="form-control">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter Username.">
+                <small>Error Message</small>
+
+            </div>
+
+            <div class="form-control">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter Email."> <!-- Could use type as email but it will validate in the way html 5 does-->
+                <small>Error Message</small>
+
+            </div>
+            <div class="form-control">
+
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" id="confirmpassword" placeholder="Confirm Password.">
+                <small>Error Message</small>
+
+            </div>
+
+            <button>Submit</button>
+            
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
