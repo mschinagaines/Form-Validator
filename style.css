@@ -1,0 +1,96 @@
+:root {
+    --success-color: lightgreen;
+    --error-color: lightcoral;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9fafb;
+    font-family: 'Castoro', serif;
+    display: flex;
+
+    /* Aligns items horizontally */
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh; /* Aligns items vertically */
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.id {
+    padding: 30px 30px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative; /*done because of the prescence of the small tag for the error message */
+    /* fun fact: when you want to position the error message as absolute, the parent element needs to be relative */
+}
+
+.form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success {
+    border-color: var(--success-color);
+}
+
+.form-control.error {
+    border-color: var(--error-color);
+}
+
+.form-control small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+form button {
+    cursor: pointer;
+    background-color: lightblue;
+    border: 2px dotted #777;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+}
