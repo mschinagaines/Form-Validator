@@ -26,11 +26,32 @@ function isEmailValid(email) {
     return re.test(String(email).toLowerCase());
 }
 
+//Check REquired Fields
+
+function checkRequired(inputArr) {
+    inputArr.foreach(function(input) {
+
+        if (input.value.trim() === "") {
+            showError(input, is `${getFieldName(input)} required.`);
+        }
+        else {
+            showSuccess(input);
+        }
+    });
+}
+
+//Get Field Name
+function getFieldName(input) {
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
 // Event Listeners
 id.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    if(username.value === '') {
+    checkRequired([username, email, password, confirmpassword]);
+
+    /*if(username.value === '') {
         showError(username, 'Hey, Input a username please!');
     }
     else {
@@ -61,5 +82,5 @@ id.addEventListener('submit', function(e) {
     }
     else {
         showSuccess(confirmpassword);
-    }
+    } */
 });
